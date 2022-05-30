@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Read() {
   const [APIData, setAPIData] = useState([]);
@@ -10,6 +11,13 @@ export default function Read() {
     });
   }, []);
 
+  const setData = (data) => {
+    let { id, firstName, lastName } = data;
+    localStorage.setItem("ID", id);
+    localStorage.setItem("First Name", firstName);
+    localStorage.setItem("Last Name", lastName);
+  };
+
   return (
     <table>
       <tr>
@@ -19,6 +27,9 @@ export default function Read() {
         <td>
           <strong>Sobrenome</strong>
         </td>
+        <td>
+          <strong>Info</strong>
+        </td>
       </tr>
 
       {APIData.map((data) => {
@@ -26,6 +37,11 @@ export default function Read() {
           <tr>
             <td>{data.firstName}</td>
             <td>{data.lastName}</td>
+            <td>
+              <Link to="/update">
+                <button onClick={() => setData(data)}>Atualizar</button>
+              </Link>
+            </td>
           </tr>
         );
       })}

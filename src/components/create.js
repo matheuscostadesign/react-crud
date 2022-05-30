@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function Create() {
@@ -12,6 +12,14 @@ export default function Create() {
     });
   };
 
+  useEffect(() => {
+    setID(localStorage.getItem("ID"));
+    setFirstName(localStorage.getItem("First Name"));
+    setLastName(localStorage.getItem("Last Name"));
+  }, []);
+
+  const [id, setID] = useState(null);
+
   return (
     <div>
       <div>
@@ -19,7 +27,7 @@ export default function Create() {
         <br />
         <input type="text" placeholder="Sobrenome" onChange={(e) => setLastName(e.target.value)} />
         <button value="Enviar" type="submit" onClick={postData}>
-          Enviar dados para API
+          Cadastrar
         </button>
       </div>
     </div>

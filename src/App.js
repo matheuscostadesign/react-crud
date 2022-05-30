@@ -25,6 +25,7 @@ function App() {
             <a href="/update">Atualizar</a>
           </li>
         </ul>
+
         <Routes>
           <Route exact path="/create" element={<Create />} />
           <Route exact path="/read" element={<Read />} />
