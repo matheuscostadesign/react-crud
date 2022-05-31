@@ -6,8 +6,8 @@ i18n
   .use(Backend)
   .use(initReactI18next)
   .init({
-    lng: "en", //default language
-    fallbackLng: "en", //when specified language
+    lng: "pt_br", //default language
+    fallbackLng: "pt_br", //when specified language
     debug: true,
     backend: {
       loadPath: "assets/i18n/{{ns}}/{{lng}}.json",
