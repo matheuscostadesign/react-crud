@@ -8,10 +8,12 @@ export default function Create() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const { t, i18n } = useTranslation();
+  const API_URL = `https://62950af263b5d108c199071e.mockapi.io/Usuarios`;
+  //const API_URL = `http://10.0.0.6:9000/Usuarios`;
 
   const postData = () => {
     axios
-      .post(`https://62950af263b5d108c199071e.mockapi.io/Usuarios`, {
+      .post(API_URL, {
         firstName,
         lastName,
       })

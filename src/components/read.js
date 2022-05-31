@@ -7,10 +7,19 @@ export default function Read() {
   const [APIData, setAPIData] = useState([]);
   const { t, i18n } = useTranslation();
   const API_URL = `https://62950af263b5d108c199071e.mockapi.io/Usuarios`;
+  //const API_URL = `http://10.0.0.6:9000/Usuarios`;
+
+  // const config = {
+  //   headers: {
+  //     header1: value1,
+  //     header2: value2,
+  //   },
+  // };
 
   useEffect(() => {
     axios.get(API_URL).then((response) => {
       setAPIData(response.data);
+      //console.log(setAPIData);
     });
   }, []);
 
@@ -32,6 +41,11 @@ export default function Read() {
     axios.delete(API_URL + `/${id}`).then(() => {
       getData();
     });
+  };
+
+  const botaoExcluir = {
+    color: "#fff",
+    backgroundColor: "#e74c3c",
   };
 
   return (
@@ -63,7 +77,9 @@ export default function Read() {
                   </Link>
                 </td>
                 <td>
-                  <button onClick={() => onDelete(data.id)}>{t("button.excluir")}</button>
+                  <button style={botaoExcluir} onClick={() => onDelete(data.id)}>
+                    {t("button.excluir")}
+                  </button>
                 </td>
               </tr>
             );
