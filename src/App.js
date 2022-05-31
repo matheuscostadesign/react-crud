@@ -4,7 +4,7 @@ import logo from "./logo.svg";
 import Create from "./components/create";
 import Read from "./components/read";
 import Update from "./components/update";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import React, { Component, Suspense } from "react";
 import LanguageSelector from "./components/languageSelector";
 import { useTranslation } from "react-i18next";
@@ -22,13 +22,13 @@ function App() {
           <br />
           <ul className="links">
             <li>
-              <a href="/">{t("menu.home")}</a>
+              <Link to="/">{t("menu.home")}</Link>
             </li>
             <li>
-              <a href="/create">{t("menu.cadastro")}</a>
+              <Link to="/create">{t("menu.cadastro")}</Link>
             </li>
             <li>
-              <a href="/read">{t("menu.listar")}</a>
+              <Link to="/read">{t("menu.listar")}</Link>
             </li>
           </ul>
         </Suspense>
