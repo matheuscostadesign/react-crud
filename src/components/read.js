@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Read() {
   const [APIData, setAPIData] = useState([]);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     axios.get(`https://62950af263b5d108c199071e.mockapi.io/Usuarios`).then((response) => {
@@ -34,18 +36,18 @@ export default function Read() {
   return (
     <>
       {APIData.length <= 0 ? (
-        <p>Nenhum cadastro...</p>
+        <p>{t("text.vazio")}</p>
       ) : (
         <table>
           <tr>
             <td>
-              <strong>Nome</strong>
+              <strong>{t("input.cadastro.nome")}</strong>
             </td>
             <td>
-              <strong>Sobrenome</strong>
+              <strong>{t("input.cadastro.sobrenome")}</strong>
             </td>
             <td>
-              <strong>Operações</strong>
+              <strong>{t("table.operacoes")}</strong>
             </td>
           </tr>
 
@@ -56,11 +58,11 @@ export default function Read() {
                 <td>{data.lastName}</td>
                 <td>
                   <Link to="/update">
-                    <button onClick={() => setData(data)}>Atualizar</button>
+                    <button onClick={() => setData(data)}>{t("button.atualizar")}</button>
                   </Link>
                 </td>
                 <td>
-                  <button onClick={() => onDelete(data.id)}>Excluir</button>
+                  <button onClick={() => onDelete(data.id)}>{t("button.excluir")}</button>
                 </td>
               </tr>
             );

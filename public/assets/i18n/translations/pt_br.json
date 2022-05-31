@@ -1,7 +1,13 @@
 {
+  "app.nome": "React.js CRUD (PT-BR)",
   "menu.home": "Página Inicial",
   "menu.cadastro": "Cadastrar",
   "menu.listar": "Listar",
   "input.cadastro.nome": "Nome",
-  "input.cadastro.sobrenome": "Sobrenome"
+  "input.cadastro.sobrenome": "Sobrenome",
+  "button.cadastro": "Cadastrar",
+  "button.atualizar": "Atualizar",
+  "button.excluir": "Excluir",
+  "table.operacoes": "Administração",
+  "text.vazio": "Nenhum cadastro..."
 }

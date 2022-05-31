@@ -1,7 +1,13 @@
 {
+  "app.nome": "React.js CRUD (EN)",
   "menu.home": "Home",
   "menu.cadastro": "Create",
   "menu.listar": "Read",
   "input.cadastro.nome": "First Name",
-  "input.cadastro.sobrenome": "Last Name"
+  "input.cadastro.sobrenome": "Last Name",
+  "button.cadastro": "Create",
+  "button.atualizar": "Update",
+  "button.excluir": "Delete",
+  "table.operacoes": "What do you want to do?",
+  "text.vazio": "Empty users..."
 }

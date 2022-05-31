@@ -29,11 +29,11 @@ export default function Create() {
   return (
     <div>
       <div>
-        <input type="text" placeholder="Nome" onChange={(e) => setFirstName(e.target.value)} />
+        <input type="text" placeholder={t("input.cadastro.nome")} required onChange={(e) => setFirstName(e.target.value)} />
         <br />
-        <input type="text" placeholder="Sobrenome" onChange={(e) => setLastName(e.target.value)} />
+        <input type="text" placeholder={t("input.cadastro.sobrenome")} onChange={(e) => setLastName(e.target.value)} required />
         <button value="Enviar" type="submit" onClick={postData}>
-          Cadastrar
+          {t("menu.cadastro")}
         </button>
       </div>
     </div>

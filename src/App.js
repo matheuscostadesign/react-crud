@@ -16,7 +16,7 @@ function App() {
     <Router>
       <div className="main">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>React.js CRUD</h1>
+        <h1>{t("app.nome")}</h1>
         <Suspense fallback={null}>
           <LanguageSelector />
           <br />
