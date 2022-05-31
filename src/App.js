@@ -5,6 +5,12 @@ import Read from "./components/read";
 import Update from "./components/update";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+import React, { Component, Suspense } from "react";
+import "./i18n";
+import Introduction from "./components/Introduction";
+import Advantages from "./components/Advantages";
+import LanguageSelector from "./components/languageSelector";
+
 function App() {
   return (
     <Router>
@@ -28,6 +34,16 @@ function App() {
           <Route exact path="/read" element={<Read />} />
           <Route exact path="/update" element={<Update />} />
         </Routes>
+
+        <Suspense fallback={null}>
+          <br />
+          <LanguageSelector />
+          <br />
+          <Introduction />
+          <br />
+          {/* <Advantages /> */}
+          <br />
+        </Suspense>
       </div>
     </Router>
   );
