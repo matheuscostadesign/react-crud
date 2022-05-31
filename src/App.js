@@ -21,9 +21,6 @@ function App() {
           <li>
             <a href="/read">Listar</a>
           </li>
-          <li>
-            <a href="/update">Atualizar</a>
-          </li>
         </ul>
 
         <Routes>

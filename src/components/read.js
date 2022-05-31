@@ -19,33 +19,54 @@ export default function Read() {
     localStorage.setItem("Last Name", lastName);
   };
 
-  return (
-    <table>
-      <tr>
-        <td>
-          <strong>Nome</strong>
-        </td>
-        <td>
-          <strong>Sobrenome</strong>
-        </td>
-        <td>
-          <strong>Info</strong>
-        </td>
-      </tr>
+  const getData = () => {
+    axios.get(`https://62950af263b5d108c199071e.mockapi.io/Usuarios`).then((getData) => {
+      setAPIData(getData.data);
+    });
+  };
 
-      {APIData.map((data) => {
-        return (
+  const onDelete = (id) => {
+    axios.delete(`https://62950af263b5d108c199071e.mockapi.io/Usuarios/${id}`).then(() => {
+      getData();
+    });
+  };
+
+  return (
+    <>
+      {APIData.length <= 0 ? (
+        <p>Nenhum cadastro...</p>
+      ) : (
+        <table>
           <tr>
-            <td>{data.firstName}</td>
-            <td>{data.lastName}</td>
             <td>
-              <Link to="/update">
-                <button onClick={() => setData(data)}>Atualizar</button>
-              </Link>
+              <strong>Nome</strong>
+            </td>
+            <td>
+              <strong>Sobrenome</strong>
+            </td>
+            <td>
+              <strong>Operações</strong>
             </td>
           </tr>
-        );
-      })}
-    </table>
+
+          {APIData.map((data) => {
+            return (
+              <tr>
+                <td>{data.firstName}</td>
+                <td>{data.lastName}</td>
+                <td>
+                  <Link to="/update">
+                    <button onClick={() => setData(data)}>Atualizar</button>
+                  </Link>
+                </td>
+                <td>
+                  <button onClick={() => onDelete(data.id)}>Excluir</button>
+                </td>
+              </tr>
+            );
+          })}
+        </table>
+      )}
+    </>
   );
 }
