@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Create() {
   const history = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const { t, i18n } = useTranslation();
 
   const postData = () => {
     axios
@@ -30,11 +32,9 @@ export default function Create() {
         <input type="text" placeholder="Nome" onChange={(e) => setFirstName(e.target.value)} />
         <br />
         <input type="text" placeholder="Sobrenome" onChange={(e) => setLastName(e.target.value)} />
-        {/* <Link to="/read"> */}
         <button value="Enviar" type="submit" onClick={postData}>
           Cadastrar
         </button>
-        {/* </Link> */}
       </div>
     </div>
   );

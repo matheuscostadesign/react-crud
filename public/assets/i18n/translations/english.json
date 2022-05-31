@@ -1,5 +1,7 @@
 {
   "menu.home": "Home",
   "menu.cadastro": "Create",
-  "menu.listar": "Read"
+  "menu.listar": "Read",
+  "input.cadastro.nome": "First Name",
+  "input.cadastro.sobrenome": "Last Name"
 }

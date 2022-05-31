@@ -1,5 +1,7 @@
 {
   "menu.home": "Página Inicial",
   "menu.cadastro": "Cadastrar",
-  "menu.listar": "Listar"
+  "menu.listar": "Listar",
+  "input.cadastro.nome": "Nome",
+  "input.cadastro.sobrenome": "Sobrenome"
 }
