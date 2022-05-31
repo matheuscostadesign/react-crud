@@ -6,9 +6,10 @@ import { useTranslation } from "react-i18next";
 export default function Read() {
   const [APIData, setAPIData] = useState([]);
   const { t, i18n } = useTranslation();
+  const API_URL = `https://62950af263b5d108c199071e.mockapi.io/Usuarios`;
 
   useEffect(() => {
-    axios.get(`https://62950af263b5d108c199071e.mockapi.io/Usuarios`).then((response) => {
+    axios.get(API_URL).then((response) => {
       setAPIData(response.data);
     });
   }, []);
@@ -22,13 +23,13 @@ export default function Read() {
   };
 
   const getData = () => {
-    axios.get(`https://62950af263b5d108c199071e.mockapi.io/Usuarios`).then((getData) => {
+    axios.get(API_URL).then((getData) => {
       setAPIData(getData.data);
     });
   };
 
   const onDelete = (id) => {
-    axios.delete(`https://62950af263b5d108c199071e.mockapi.io/Usuarios/${id}`).then(() => {
+    axios.delete(API_URL + `/${id}`).then(() => {
       getData();
     });
   };

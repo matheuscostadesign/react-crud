@@ -6,8 +6,8 @@
   "input.cadastro.nome": "Nome",
   "input.cadastro.sobrenome": "Sobrenome",
   "button.cadastro": "Cadastrar",
-  "button.atualizar": "Atualizar",
+  "button.atualizar": "Alterar",
   "button.excluir": "Excluir",
-  "table.operacoes": "Administração",
+  "table.operacoes": "Controles",
   "text.vazio": "Nenhum cadastro..."
 }
