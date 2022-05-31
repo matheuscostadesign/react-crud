@@ -12,6 +12,7 @@ export default function Read() {
   }, []);
 
   const setData = (data) => {
+    //console.log(data);
     let { id, firstName, lastName } = data;
     localStorage.setItem("ID", id);
     localStorage.setItem("First Name", firstName);

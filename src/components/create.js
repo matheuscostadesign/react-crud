@@ -12,12 +12,6 @@ export default function Create() {
     });
   };
 
-  useEffect(() => {
-    setID(localStorage.getItem("ID"));
-    setFirstName(localStorage.getItem("First Name"));
-    setLastName(localStorage.getItem("Last Name"));
-  }, []);
-
   const [id, setID] = useState(null);
 
   return (
