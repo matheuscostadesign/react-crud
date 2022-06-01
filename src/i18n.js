@@ -8,7 +8,7 @@ i18n
   .init({
     lng: "pt_br", //default language
     fallbackLng: "pt_br", //when specified language
-    debug: true,
+    debug: false,
     backend: {
       loadPath: "assets/i18n/{{ns}}/{{lng}}.json",
     },

@@ -13,7 +13,6 @@ const LanguageSelector = () => {
     <div onChange={changeLanguage}>
       <input type="radio" value="pt_br" name="language" defaultChecked />
       <label style={{ marginLeft: 8 }}>Português (Brasil)</label>
-
       <input type="radio" value="english" name="language" style={{ marginLeft: 16 }} />
       <label style={{ marginLeft: 8 }}>Inglês</label>
     </div>

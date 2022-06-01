@@ -9,18 +9,11 @@ export default function Read() {
   const API_URL = `https://62950af263b5d108c199071e.mockapi.io/Usuarios`;
   //const API_URL = `http://10.0.0.6:9000/Usuarios`;
 
-  // const config = {
-  //   headers: {
-  //     header1: value1,
-  //     header2: value2,
-  //   },
-  // };
-
   useEffect(() => {
     axios.get(API_URL).then((response) => {
       setAPIData(response.data);
-      //console.log(setAPIData);
     });
+    getData();
   }, []);
 
   const setData = (data) => {
@@ -34,6 +27,7 @@ export default function Read() {
   const getData = () => {
     axios.get(API_URL).then((getData) => {
       setAPIData(getData.data);
+      console.log("getData");
     });
   };
 

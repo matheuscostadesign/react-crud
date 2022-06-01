@@ -1,13 +1,15 @@
 import "./App.css";
 import "./i18n";
 import logo from "./logo.svg";
-import Create from "./components/create";
-import Read from "./components/read";
-import Update from "./components/update";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import React, { Component, Suspense } from "react";
+import React, { Component, Suspense, lazy } from "react";
 import LanguageSelector from "./components/languageSelector";
 import { useTranslation } from "react-i18next";
+
+const Create = lazy(() => import("./components/create"));
+const Read = lazy(() => import("./components/read"));
+const Update = lazy(() => import("./components/update"));
+const Home = lazy(() => import("./components/home"));
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -31,12 +33,13 @@ function App() {
               <Link to="/read">{t("menu.listar")}</Link>
             </li>
           </ul>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/create" element={<Create />} />
+            <Route exact path="/read" element={<Read />} />
+            <Route exact path="/update" element={<Update />} />
+          </Routes>
         </Suspense>
-        <Routes>
-          <Route exact path="/create" element={<Create />} />
-          <Route exact path="/read" element={<Read />} />
-          <Route exact path="/update" element={<Update />} />
-        </Routes>
       </div>
     </Router>
   );

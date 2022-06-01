@@ -8,6 +8,6 @@
   "button.cadastro": "Create",
   "button.atualizar": "Update",
   "button.excluir": "Delete",
-  "table.operacoes": "What do you want to do?",
+  "table.operacoes": "Operations",
   "text.vazio": "Empty users..."
 }
