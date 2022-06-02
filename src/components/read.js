@@ -10,9 +10,9 @@ export default function Read() {
   //const API_URL = `http://10.0.0.6:9000/Usuarios`;
 
   useEffect(() => {
-    axios.get(API_URL).then((response) => {
-      setAPIData(response.data);
-    });
+    //axios.get(API_URL).then((response) => {
+    //setAPIData(response.data);
+    // });
     getData();
   }, []);
 

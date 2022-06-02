@@ -16,6 +16,9 @@ export default function Create() {
       .post(API_URL, {
         firstName,
         lastName,
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
       .then(function (response) {
         history("/read");

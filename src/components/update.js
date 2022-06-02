@@ -21,7 +21,6 @@ export default function Update() {
 
   const updateAPIData = () => {
     axios
-      // .put(`https://62950af263b5d108c199071e.mockapi.io/Usuarios/${id}`, {
       .put(API_URL + `/${id}`, {
         firstName,
         lastName,
