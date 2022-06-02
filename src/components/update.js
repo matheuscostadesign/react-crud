@@ -10,6 +10,8 @@ export default function Update() {
   const [lastName, setLastName] = useState("");
   const [id, setID] = useState(null);
   const { t, i18n } = useTranslation();
+  const API_URL = `https://62950af263b5d108c199071e.mockapi.io/Usuarios`;
+  //const API_URL = `http://10.0.0.6:9000/Usuarios`;
 
   useEffect(() => {
     setID(localStorage.getItem("ID"));
@@ -19,7 +21,8 @@ export default function Update() {
 
   const updateAPIData = () => {
     axios
-      .put(`https://62950af263b5d108c199071e.mockapi.io/Usuarios/${id}`, {
+      // .put(`https://62950af263b5d108c199071e.mockapi.io/Usuarios/${id}`, {
+      .put(API_URL + `/${id}`, {
         firstName,
         lastName,
       })
