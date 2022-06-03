@@ -1,9 +1,10 @@
 {
-  "app.nome": "React.js CRUD (EN)",
+  "app.nome": "React.js (EN)",
+  "app.home": "CRUD example in React.js consuming API",
   "menu.home": "Home",
   "menu.cadastro": "Create",
   "menu.listar": "Read",
-  "input.cadastro.nome": "First Name",
+  "input.cadastro.nome": "Name",
   "input.cadastro.sobrenome": "Last Name",
   "button.cadastro": "Create",
   "button.atualizar": "Update",

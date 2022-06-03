@@ -65,3 +65,14 @@ button:hover {
   padding-left: 0;
   margin-bottom: 1rem;
 }
+
+table {
+  background-color: #1d2025;
+  color: #fff;
+  padding: 16px;
+  border-radius: 6px;
+}
+
+table tbody tr td {
+  padding: 4px;
+}
