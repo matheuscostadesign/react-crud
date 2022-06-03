@@ -27,7 +27,7 @@ export default function Read() {
   const getData = () => {
     axios.get(API_URL).then((getData) => {
       setAPIData(getData.data);
-      console.log("getData");
+      // console.log("getData");
     });
   };
 
@@ -48,36 +48,37 @@ export default function Read() {
         <p>{t("text.vazio")}</p>
       ) : (
         <table>
-          <tr>
-            <td>
-              <strong>{t("input.cadastro.nome")}</strong>
-            </td>
-            <td>
-              <strong>{t("input.cadastro.sobrenome")}</strong>
-            </td>
-            <td>
-              <strong>{t("table.operacoes")}</strong>
-            </td>
-          </tr>
-
-          {APIData.map((data) => {
-            return (
-              <tr>
-                <td>{data.firstName}</td>
-                <td>{data.lastName}</td>
-                <td>
-                  <Link to="/update">
-                    <button onClick={() => setData(data)}>{t("button.atualizar")}</button>
-                  </Link>
-                </td>
-                <td>
-                  <button style={botaoExcluir} onClick={() => onDelete(data.id)}>
-                    {t("button.excluir")}
-                  </button>
-                </td>
-              </tr>
-            );
-          })}
+          <tbody>
+            <tr>
+              <td>
+                <strong>{t("input.cadastro.nome")}</strong>
+              </td>
+              <td>
+                <strong>{t("input.cadastro.sobrenome")}</strong>
+              </td>
+              <td>
+                <strong>{t("table.operacoes")}</strong>
+              </td>
+            </tr>
+            {APIData.map((data) => {
+              return (
+                <tr key={data.id}>
+                  <td>{data.firstName}</td>
+                  <td>{data.lastName}</td>
+                  <td>
+                    <Link to="/update">
+                      <button onClick={() => setData(data)}>{t("button.atualizar")}</button>
+                    </Link>
+                  </td>
+                  <td>
+                    <button style={botaoExcluir} onClick={() => onDelete(data.id)}>
+                      {t("button.excluir")}
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       )}
     </>
