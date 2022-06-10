@@ -1,6 +1,6 @@
 {
   "app.nome": "React.js (PT-BR)",
-  "app.home": "Exemplo de CRUD em React.js consumindo API",
+  "app.home": "Exemplo de CRUD em React.js",
   "menu.home": "Página Inicial",
   "menu.cadastro": "Cadastrar",
   "menu.listar": "Listar",

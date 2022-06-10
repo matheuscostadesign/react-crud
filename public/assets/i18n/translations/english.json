@@ -1,6 +1,6 @@
 {
   "app.nome": "React.js (EN)",
-  "app.home": "CRUD example in React.js consuming API",
+  "app.home": "CRUD example in React.js",
   "menu.home": "Home",
   "menu.cadastro": "Create",
   "menu.listar": "Read",
